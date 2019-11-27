@@ -17,7 +17,7 @@
               <label for="deadline">
                 Deadline:
               </label>
-              <input id="deadline" type="text" formControlName="deadline">
+              <input id="deadline" placeholder="DD/MM/YYYY" type="text" formControlName="deadline">
               <div *ngIf="!editForm.controls['deadline'].valid && editForm.controls['deadline'].touched" class="alert">
                 Wrong date format
             </div>
