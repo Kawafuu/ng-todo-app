@@ -1,0 +1,31 @@
+<div class="todo-edit-wrapper">
+    <div class="todo-edit-box">
+        <a class="todo-edit-link" [routerLink]="''">go back</a>
+        <form class="todo-edit-form" [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)">
+
+            <div>
+              <label for="title">
+                Title:
+              </label>
+              <input id="title" type="text" formControlName="title">
+              <div *ngIf="!editForm.controls['title'].valid && editForm.controls['title'].touched" class="alert">
+                Title is required
+            </div>
+            </div>
+          
+            <div>
+              <label for="deadline">
+                Deadline:
+              </label>
+              <input id="deadline" type="text" formControlName="deadline">
+              <div *ngIf="!editForm.controls['deadline'].valid && editForm.controls['deadline'].touched" class="alert">
+                Wrong date format
+            </div>
+            </div>
+          
+            <button  class="button" type="submit">Save</button>
+          
+          </form>
+          <button (click)="handleDelete(todoId)" class=delete-btn>DELETE</button>
+    </div>   
+</div>

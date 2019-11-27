@@ -1,0 +1,30 @@
+<div class="todo-add-wrapper">
+    <div class="todo-add-box">
+        <a class="todo-add-link" [routerLink]="''">go back</a>
+        <form class="todo-add-form" [formGroup]="addForm" (ngSubmit)="onSubmit(addForm.value)">
+
+            <div>
+              <label for="todo title">
+                Title:
+              </label>
+              <input placeholder="what do you need to do?" id="title" type="text" formControlName="title">
+              <div *ngIf="!addForm.controls['title'].valid && addForm.controls['title'].touched" class="alert">
+                  Title is required
+              </div>
+            </div>
+          
+            <div>
+              <label for="date">
+                Deadline:
+              </label>
+              <input placeholder="MM/DD/YYYY" id="date" type="text" formControlName="date">
+              <div *ngIf="!addForm.controls['date'].valid && addForm.controls['date'].touched" class="alert">
+                  Wrong date format
+              </div>
+            </div>
+          
+            <button  class="button" type="submit">Add todo</button>
+          
+          </form>
+    </div>   
+</div>

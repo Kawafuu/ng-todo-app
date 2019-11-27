@@ -1,0 +1,19 @@
+<div class="todo-list-wrapper">
+<button class="btn-new-todo" [routerLink]="'add'">+</button>
+<div *ngIf="today.length > 0" class="todo-sorted">Today:</div>
+<div class="todo-item"  *ngFor="let todo of today" >
+    <h3 [routerLink]="['edit', todo.id]" class="todo-desc">{{todo.title}}</h3>
+    <p class="todo-date">created on: {{todo.created}}</p>
+</div>
+<div *ngIf="tomorrow.length > 0" class="todo-sorted">Tomorrow:</div>
+<div class="todo-item"  *ngFor="let todo of tomorrow" >
+    <h3 [routerLink]="['edit', todo.id]" class="todo-desc">{{todo.title}}</h3>
+    <p class="todo-date">created on: {{todo.created}}</p>
+</div>
+<div *ngIf="future.length > 0" class="todo-sorted">Future:</div>
+<div class="todo-item"  *ngFor="let todo of future" >
+    <h3 [routerLink]="['edit', todo.id]" class="todo-desc">{{todo.title}}</h3>
+    <p class="todo-date">created on: {{todo.created}}</p>
+    <p class="todo-date">deadline: {{todo.deadline}}</p>
+</div>
+</div>
