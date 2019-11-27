@@ -5,6 +5,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 used libraries/frameworks, etc:
 angular,
 moment.js,
-es6,
+typescript,
 scss,
 html5
